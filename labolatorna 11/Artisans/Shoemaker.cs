@@ -11,7 +11,8 @@ namespace labolatorna_11.Artisans
     {
         private Dictionary<int, string> actionDictionary = new()
         {
-            {10, "Вiдкрити майстерню"}, {11 , "випиває гальбу пива" },{15, "починає спiвати пiсню"}, {18 , "зачиняє майстерню i йде до шинку" }
+            {10, "Вiдкрити майстерню"}, {11 , "випиває гальбу пива" }, {15, "починає спiвати пiсню"}, 
+            {18 , "зачиняє майстерню i йде до шинку" }
         };
         public void DoAction(int actionNum)
         {

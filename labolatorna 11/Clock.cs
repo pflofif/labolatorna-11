@@ -12,21 +12,15 @@ namespace labolatorna_11
 
         private readonly List<IObserverLaba> _artistant = new();
         private int time;
-        public static Clock GetInstance()
-        {
-            if (_instance == null)
-            {
-                _instance = new Clock();
-            }
-            return _instance;
-        }
 
+        public static Clock GetInstance() => _instance ??= new Clock();
         public int UpdateTime()
         {
             if (time++ >= 24) return 0;
             Console.WriteLine($"ЧАС В МIСТI : {time}");
             Notify();
             Thread.Sleep(1000);
+
             return 1;
         }
         public void Attach(IObserverLaba subObj)
@@ -37,9 +31,7 @@ namespace labolatorna_11
         {
             _artistant.Remove(subObj);
         }
-        public void Notify()
-        {
-            _artistant.ForEach(o => { o.Update(time); });
-        }
+        public void Notify() => _artistant.ForEach(o => { o.Update(time); });
+
     }
 }

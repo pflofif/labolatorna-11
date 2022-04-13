@@ -13,6 +13,7 @@ namespace labolatorna_11.Artisans
         {
             {16, "починає варити пиво"}, {17 , " вiдчиняє шинок" },{23, "зачиняє шинок"}
         };
+
         public void DoAction(int actionNum)
         {
             if (actionDictionary.ContainsKey(actionNum)) Console.WriteLine($"Шинкар робить : {actionDictionary[actionNum]}");
